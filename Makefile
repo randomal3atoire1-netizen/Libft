@@ -1,5 +1,5 @@
 SRCS = \
-ft_atoi.c          ft_lstiter.c     ft_putstr.c     ft_strrchr.c \
+ft_atoi.c          ft_lstiter.c     ft_strrchr.c \
 ft_bzero.c         ft_lstlast.c     ft_putstr_fd.c  ft_strtrim.c \
 ft_calloc.c        ft_lstmap.c      ft_split.c      ft_substr.c \
 ft_isalnum.c       ft_lstnew.c      ft_strchr.c     ft_tolower.c \

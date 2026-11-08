@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:21:22 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/08 12:23:09 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 16:11:40 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (res);
 }
 
-int	main(int ac, char **av)
-{
-	char *str;
+// void	ft_putstr(const char *str)
+// {
+// 	int	len;
 
-	(void)ac;
-	str = ft_substr(av[1], atoi(av[2]), atoi(av[3]));
-	ft_putstr(str);
-	free(str);
-}
+// 	len = ft_strlen(str);
+// 	write(1, str, len);
+// }
+
+// int	main(int ac, char **av)
+// {
+// 	char *str;
+
+// 	(void)ac;
+// 	str = ft_substr(av[1], atoi(av[2]), atoi(av[3]));
+// 	ft_putstr(str);
+// 	free(str);
+// }

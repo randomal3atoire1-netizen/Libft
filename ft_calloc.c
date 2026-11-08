@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 17:21:00 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/04 10:57:32 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 19:10:11 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	i;
 
 	data = malloc(nmemb * size);
+	if (!data)
+		return (0);
 	i = 0;
 	while (i < nmemb * size)
 	{

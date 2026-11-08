@@ -6,13 +6,13 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:20:15 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/04 10:56:39 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 16:28:51 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 17:21:36 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/03 13:15:21 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 18:50:42 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
+/* 
 #include <string.h>
 #include <unistd.h>
 
@@ -42,4 +42,4 @@ int	main(int ac, char **av)
 	ac+=0;
 	memcpy(av[1]+5, av[1], 16);
 	ft_putstr(av[1]);
-}*/
+} */

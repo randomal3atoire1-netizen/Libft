@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 10:53:36 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/04 11:17:45 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 18:07:20 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (lst && (*lst)->next)
+	while (lst && *lst && (*lst)->next)
 		*lst = (*lst)->next;
 	(*lst)->next = new;
 }

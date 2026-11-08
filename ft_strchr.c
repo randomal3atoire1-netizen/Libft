@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 18:07:05 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/02 20:20:46 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 19:07:06 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s && s[i] && s[i] != c)
+	while (s[i] && s[i] != (char)c)
 		i++;
-	if (s && s[i] == c)
+	if (s[i] == (char)c)
 		return (&((char *)s)[i]);
 	return (0);
 }

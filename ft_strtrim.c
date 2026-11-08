@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:21:15 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/04 10:55:50 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 22:17:30 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	c_end(char const *s1, char const *set)
 	len_s1 = ft_strlen(s1);
 	i = 0;
 	count = 0;
-	while (s1 && set && set[i] && len_s1 >= 0)
+	while (s1 && set && set[i] && len_s1 > 0)
 	{
 		i = 0;
 		while (set[i])
@@ -46,9 +46,10 @@ static int	c_end(char const *s1, char const *set)
 				len_s1--;
 				break ;
 			}
+			i++;
 		}
 	}
-	if (len_s1 < 0)
+	if (len_s1 <= 0)
 		return (0);
 	return (count);
 }
@@ -64,6 +65,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	begin = c_begin(s1, set);
 	end = c_end(s1, set);
 	res = malloc((ft_strlen(s1) - begin - end + 1) * sizeof(char));
+	if (!res)
+		return (0);
 	while (s1 && set && s1[i + begin + end])
 	{
 		res[i] = s1[begin + i];
@@ -72,3 +75,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res[i] = '\0';
 	return (res);
 }
+/*
+int	main(int ac, char **av)
+{
+	char	*str = ft_strtrim(av[1], av[2]);
+}*/

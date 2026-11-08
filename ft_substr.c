@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:21:22 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/08 16:11:40 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 21:46:38 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	while (s && s[i])
 		i++;
-	if (i < start)
-		i = start;
-	else
-		return (0);
-	while (s && s[i] && len > i - start)
-		i++;
-	res = malloc((i - start) * sizeof(char));
+	if (i <= start)
+	{
+		res = malloc(1);
+		if (!res)
+			return (0);
+		res[0] = 0;
+		return (res);
+	}
+	i = start;
+	res = malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (0);
 	while (s && s[i] && len > i - start)
@@ -51,7 +54,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	char *str;
 
 // 	(void)ac;
-// 	str = ft_substr(av[1], atoi(av[2]), atoi(av[3]));
+// 	str = ft_substr(av[1], atoi(av[2]), 100000000000);
 // 	ft_putstr(str);
 // 	free(str);
 // }

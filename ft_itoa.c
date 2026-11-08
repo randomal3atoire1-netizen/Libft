@@ -6,42 +6,35 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:19:32 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/04 10:57:21 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 21:52:08 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	calc_len(long int n)
+static int	calc_len(long int nb)
 {
 	int	len;
 
 	len = 1;
-	if (n < 0)
+	if (nb < 0)
 	{
 		len++;
-		n *= -1;
+		nb *= -1;
 	}
-	while (n > 10)
+	while (nb >= 10)
 	{
 		len++;
-		n /= 10;
+		nb /= 10;
 	}
 	return (len);
 }
 
-char	*ft_itoa(int n)
+static void	fill_res(char *res, long int nb, int len)
 {
-	char		*res;
-	int			len;
-	int			sign;
-	long int	nb;
+	int	sign;
 
-	nb = n;
 	sign = 1;
-	len = calc_len(nb);
-	res = malloc((len + 1) * sizeof(char));
-	res[len--] = '\0';
 	if (nb < 0)
 	{
 		nb *= -1;
@@ -56,6 +49,22 @@ char	*ft_itoa(int n)
 	res[len] = nb + 48;
 	if (sign < 0)
 		res[0] = '-';
+}
+
+char	*ft_itoa(int n)
+{
+	char		*res;
+	int			len;
+	long int	nb;
+
+	nb = n;
+	len = calc_len(nb);
+	res = malloc((len + 1) * sizeof(char));
+	if (!res)
+		return (0);
+	res[len] = '\0';
+	if (len)
+		fill_res(res, nb, len - 1);
 	return (res);
 }
 /*

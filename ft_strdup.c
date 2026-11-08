@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 17:21:59 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/02 19:00:22 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/08 20:10:54 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	while (s && s[i])
 		i++;
-	cpy = malloc(i * sizeof(char));
+	cpy = malloc((i + 1) * sizeof(char));
 	i = 0;
 	while (s && cpy && s[i])
 	{

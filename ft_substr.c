@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:21:22 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/09 15:24:05 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/09 21:22:15 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	if (i <= start)
 		return (error_handler());
-	if (i < len)
-		len = i;
+	if (i - start < len)
+		len = i - start;
 	res = malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (0);

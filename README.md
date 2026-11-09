@@ -1,11 +1,10 @@
 *This project has been created as part of the 42 curriculum by tdockes*
 
 ## Description :
-This project's name is Libft, it's a library of functions in C for future projects.
+This project's name is Libft, it's a library of basic functions in C.
 
 ## Instructions :
 You can create the library "libft.a" with the command "make" at the root of the directory.
-You can create and delete the .o with "make noo" at the root of the directory.
 You can delete all the .o and the library with "make fclean" at the root of the directory.
 
 ## Resources :

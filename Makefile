@@ -29,6 +29,4 @@ clean:
 
 re: fclean all
 
-noo: all clean
-
 .PHONY: re all fclean clean

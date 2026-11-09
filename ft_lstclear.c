@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 10:53:57 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/04 11:25:42 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/09 15:55:07 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		free(*lst);
 		*lst = next;
 	}
-	lst = NULL;
+	*lst = NULL;
 }

@@ -6,11 +6,25 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:20:36 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/08 22:25:24 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/09 15:38:52 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	**free_strs(char **strs)
+{
+	int	i;
+
+	i = 0;
+	while (strs[i])
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return (0);
+}
 
 static int	calc_size(const char *s, char c)
 {
@@ -36,7 +50,7 @@ static int	add_str(char **strs, const char *s, char c)
 	j = 0;
 	str = malloc((calc_size(s, c) + 1) * sizeof(char));
 	if (!str)
-		return (0);
+		return (-1);
 	while (s && s[i] && s[i] != c)
 	{
 		str[i] = s[i];
@@ -83,8 +97,10 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**strs;
+	int		push;
 
 	i = 0;
+	push = 0;
 	strs = malloc((calc_len_strs(s, c) + 1) * sizeof(char *));
 	if (!strs)
 		return (NULL);
@@ -92,7 +108,13 @@ char	**ft_split(char const *s, char c)
 		s++;
 	while (s && *s)
 	{
-		s += add_str(&strs[i], s, c);
+		push = add_str(&strs[i], s, c);
+		if (push == -1)
+		{
+			strs[i] = NULL;
+			return (free_strs(strs));
+		}
+		s += push;
 		i++;
 	}
 	strs[i] = NULL;
@@ -120,7 +142,7 @@ void	mega_putstr(char **strs)
 		i++;
 	}
 }
-
+#include <stdio.h>
 int	main(int ac, char **av)
 {
 	ac += 0;

@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:21:07 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/04 10:56:02 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/09 17:17:16 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!res)
 		return (0);
 	i = 0;
-	while (s && s[i])
+	while (s && f && s[i])
 	{
 		res[i] = f(i, s[i]);
 		i++;
 	}
-	res[i] = '\0';
+	if (s)
+		res[i] = '\0';
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 10:54:11 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/08 16:30:14 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/09 17:11:03 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst)
+	while (f && lst)
 	{
 		f(lst->content);
 		lst = lst->next;

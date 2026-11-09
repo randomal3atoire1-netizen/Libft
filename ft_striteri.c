@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:20:49 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/03 20:19:46 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/09 17:08:39 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	int	i;
 
 	i = 0;
-	while (s && s[i])
+	while (s && f && s[i])
 	{
 		f(i, &s[i]);
 		i++;

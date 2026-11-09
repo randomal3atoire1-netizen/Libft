@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:20:36 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/09 15:38:52 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/09 17:07:09 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	**free_strs(char **strs)
 	int	i;
 
 	i = 0;
-	while (strs[i])
+	while (strs && strs[i])
 	{
 		free(strs[i]);
 		i++;
@@ -73,9 +73,9 @@ static int	calc_len_strs(const char *s, char c)
 
 	i = 0;
 	res = 1;
-	while (s[i] && s[i] == c)
+	while (s && s[i] && s[i] == c)
 		i++;
-	if (!s[i])
+	if (s && !s[i])
 		return (0);
 	while (s && s[i])
 	{

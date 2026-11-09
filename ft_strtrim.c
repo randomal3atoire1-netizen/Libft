@@ -6,7 +6,7 @@
 /*   By: tdockes <tdockes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:21:15 by tdockes           #+#    #+#             */
-/*   Updated: 2026/11/08 22:17:30 by tdockes          ###   ########.fr       */
+/*   Updated: 2026/11/09 17:17:49 by tdockes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 
 	i = 0;
+	if (!s1 || !set)
+		return (0);
 	begin = c_begin(s1, set);
 	end = c_end(s1, set);
 	res = malloc((ft_strlen(s1) - begin - end + 1) * sizeof(char));
 	if (!res)
 		return (0);
-	while (s1 && set && s1[i + begin + end])
+	while (s1[i + begin + end])
 	{
 		res[i] = s1[begin + i];
 		i++;
